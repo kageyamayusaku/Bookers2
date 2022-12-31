@@ -1,2 +1,25 @@
-<h1>Homes#top</h1>
-<p>Find me in app/views/homes/top.html.erb</p>
+<div class="top_main">
+  <h1>welcome to
+
+      <%= link_to "https://fontawesome.com/icons/book?s=solid&f=classic" do %>
+        <i class="fa-solid fa-book"></i>
+      <% end %>
+
+      Bookers !!</h1>
+  <p>In Bookers,<br>
+     you can share and exchange your opinions , inpressions , and emotions<br>
+     about various books!</p>
+
+    <% if user_signed_in? %>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to "新規登録", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "ログイン", new_user_session_path %>
+      </li>
+    <% end %>
+</div>
