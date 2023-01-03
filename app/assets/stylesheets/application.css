@@ -17,3 +17,16 @@
 footer p{
   text-align:center;
 }
+header{
+  background-color: #343a40;
+}
+ul{
+  list-style: none;
+}
+.login{
+  background-color: #17a2b8;
+  display:block;
+}
+.signup{
+  background-color: #28a745;
+}
