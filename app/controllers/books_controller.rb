@@ -1,12 +1,10 @@
 class BooksController < ApplicationController
 
-  def new
+  def index
+    @book = Book.new
   end
 
   def create
-  end
-
-  def index
   end
 
 end
