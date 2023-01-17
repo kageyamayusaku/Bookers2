@@ -16,17 +16,14 @@ class BooksController < ApplicationController
     @book = Book.new
     @book_id = Book.find(params[:id])
   end
-  
+
   def edit
-    
   end
-  
+
   def update
-    
   end
-  
+
   def destroy
-    
   end
 
   private
