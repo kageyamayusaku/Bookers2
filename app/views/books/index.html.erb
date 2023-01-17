@@ -15,19 +15,21 @@
           </tr>
         </thead>
         <tbody>
-        <% @books.each do |book_image| %>
+        <% @book_.each do |book_image| %>
           <tr>
             <td>
               <%= link_to user_path(book_image.user) do %>
                 <%= image_tag book_image.get_image, size:"80x80" %>
               <% end %>
             </td>
-            <td>
-              <%= link_to book_path(book_image.user) do %>
+            <td class="text-break">
+              <%= link_to book_path(book_image.id) do %>
                 <%= book_image.title %>
               <% end %>
             </td>
-            <td><%= book_image.body %></td>
+            <td class="text-break">
+              <%= book_image.body %>
+            </td>
           </tr>
         <% end %>
         </tbody>

@@ -1,0 +1,38 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'layouts/user_info', book: @book %>
+    </div>
+    <div class="col-md-8 offset-md-1 mt-3">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="text-break", style="width: 100px;">
+              <%= link_to user_path(@book_id.user) do %>
+                <%= image_tag @book_id.get_image %>
+                <%= @book_id.user.name %>
+              <% end %>
+            </td>
+            <td class="text-break">
+              <%= link_to book_path(@book_id.id) do %>
+                <%= @book_id.title %>
+              <% end %>
+            </td>
+            <td class="text-break">
+              <%= @book_id.body %>
+            </td>
+            <% if @book_id.user == current_user %>
+              <td>
+                <%= link_to "Edit", edit_book_path(@book_id), class:"btn btn-sm btn-success" %>
+              </td>
+              <td>
+               <%= link_to "Destroy", book_path(@book_id), method: :delete, class:"btn btn-sm btn-danger" %>
+              </td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
