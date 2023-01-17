@@ -1,0 +1,39 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-3">
+      <%= render 'layouts/user_info', book: @book %>
+    </div>
+    <div class="col-md-8 offset-md-1 mt-3">
+      <h2>Books</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+          <tr>
+            <th style="width: 100px;"></th>
+            <th>Title</th>
+            <th>Opinion</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @user_books.each do |user_book_image| %>
+          <tr>
+            <td>
+              <%= link_to user_path(user_book_image.user) do %>
+                <%= image_tag user_book_image.get_image, size:"80x80" %>
+              <% end %>
+            </td>
+            <td class="text-break">
+              <%= link_to book_path(user_book_image.id) do %>
+                <%= user_book_image.title %>
+              <% end %>
+            </td>
+            <td class="text-break">
+              <%= user_book_image.body %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
