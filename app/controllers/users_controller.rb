@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @book = Book.new
-  　@user_books = User.joins(:books).select("users.*", "posts.*")
+    @user = User.find(params[:id])
+    @user_books = @user.books
   end
 
   def index
