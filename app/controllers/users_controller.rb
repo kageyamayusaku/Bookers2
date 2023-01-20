@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
 
   def show
     @book = Book.new
@@ -13,6 +12,9 @@ class UsersController < ApplicationController
   end
 
   def edit
+    unless @user == current_user
+      redirect_to user_path(current_user)
+    end
     @user = User.find(params[:id])
   end
 
