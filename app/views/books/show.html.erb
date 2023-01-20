@@ -13,7 +13,7 @@
           <tr>
             <td class="text-break", style="width: 100px;">
               <%= link_to user_path(@book_id.user) do %>
-                <%= image_tag @book_id.get_image %>
+                <%= image_tag @book_id.get_profile_image %>
                 <%= @book_id.user.name %>
               <% end %>
             </td>
