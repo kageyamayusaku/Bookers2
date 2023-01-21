@@ -14,16 +14,16 @@
           </tr>
         </thead>
         <tbody>
-        <% @users.each do |user_image| %>
+        <% @users.each do |user| %>
           <tr>
             <td>
-              <%= image_tag user_image.get_profile_image, size:"80x80" %>
+              <%= image_tag user.get_profile_image, size:"80x80" %>
             </td>
             <td class="text-break">
-              <%= user_image.name %>
+              <%= user.name %>
             </td>
             <td>
-              <%= link_to "Show", user_path(user_image.id) %>
+              <%= link_to "Show", user_path(user.id) %>
             </td>
           </tr>
         <% end %>

@@ -4,7 +4,7 @@
 <div class="container px-5 px-sm-0">
   <div class="row">
     <div class="col-md-3">
-      <%= render 'layouts/user_info', book: @book, user: @book_id.user %>
+      <%= render 'layouts/user_info', book: @book, user: @book2.user %>
     </div>
     <div class="col-md-8 offset-md-1 mt-3">
       <h2>Book detail</h2>
@@ -12,25 +12,25 @@
         <tbody>
           <tr>
             <td class="text-break", style="width: 100px;">
-              <%= link_to user_path(@book_id.user) do %>
-                <%= image_tag @book_id.get_profile_image %>
-                <%= @book_id.user.name %>
+              <%= link_to user_path(@book2.user) do %>
+                <%= image_tag @book2.user.get_profile_image, size:"100x100" %>
+                <%= @book2.user.name %>
               <% end %>
             </td>
             <td class="text-break">
-              <%= link_to book_path(@book_id.id) do %>
-                <%= @book_id.title %>
+              <%= link_to book_path(@book2.id) do %>
+                <%= @book2.title %>
               <% end %>
             </td>
             <td class="text-break">
-              <%= @book_id.body %>
+              <%= @book2.body %>
             </td>
-            <% if @book_id.user == current_user %>
+            <% if @book2.user == current_user %>
               <td>
-                <%= link_to "Edit", edit_book_path(@book_id), class:"btn btn-sm btn-success" %>
+                <%= link_to "Edit", edit_book_path(@book2.id), class:"btn btn-sm btn-success" %>
               </td>
               <td>
-                <%= link_to "Destroy", book_path(@book_id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %>
+                <%= link_to "Destroy", book_path(@book2.id), method: :delete, "data-confirm" => "本当に消しますか？", class:"btn btn-sm btn-danger" %>
               </td>
             <% end %>
           </tr>
